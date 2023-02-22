@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import ItemList from './ItemList';
+import ItemDetail from "./ItemDetail";
 
-const ItemListContainer = () => {
-  const { category } = useParams();
+const ItemDetailContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -19,15 +17,12 @@ const ItemListContainer = () => {
     getData();
   }, [])
 
-  const categoryFilter = products.filter((product) =>product.category === category);
-  console.log(categoryFilter);
 
   return (
     <>
-      {category ? <ItemList products={categoryFilter} /> : <ItemList products={products} />}
+      <ItemDetail products={products}/>
     </>
-
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

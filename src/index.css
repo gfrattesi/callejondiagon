@@ -17,11 +17,13 @@ nav{
   color: white;
 }
 
-nav h1{
+.brand{
   font-family: 'Sassy Frass', cursive;
   font-size: 60px;
   font-weight: 400;
   padding-left: 20px;
+  color: white;
+  text-decoration: none;
 }
 nav ul{
   display: flex;
@@ -33,9 +35,26 @@ nav ul li{
   padding: 10px;
 }
 
+.categorias{
+  color: white;
+  text-decoration: none;
+}
+
 nav ul li:hover{
   color: #D5A021;
   cursor: pointer;
+  transition: 1s;
+}
+
+.tienda{
+  border: white 1px solid;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.tienda:hover{
+  border: #D5A021 1px solid;
   transition: 1s;
 }
 
@@ -44,6 +63,11 @@ nav ul li:hover{
   font-size: 60px;
   text-align: center;
   color: #0F1A20;
+  background-image: url("./assets/logo.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size:18%;
+  height: calc(100vh - 80px);
 }
 
 .contador{
@@ -61,4 +85,145 @@ nav ul li:hover{
 
 .carrito{
   padding-right: 20px;
+}
+
+.link-cart{
+  text-decoration: none;
+  color: white
+}
+
+.item-list{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item-container{
+  width: 200px;
+  margin: 10px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-container div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:lightgray;
+  width: 200px;
+  height: 140px;
+  border-bottom-left-radius: 40px;
+}
+.item-container h2{
+  font-family: 'Aboreto', cursive;
+  color:#2A4747;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+  height: 40px;
+}
+
+.item-container img{
+  width: 200px;
+}
+
+.item-container p{
+  font-family: 'Aboreto', cursive;
+  font-size: 12px;
+  color:#2A4747;
+  margin-bottom: 5px;
+}
+
+.item-container button{
+  font-family: 'Aboreto', cursive;
+  color:white;
+  font-size: 15px;
+  padding: 10px;
+  background-color:#2A4747;
+  border: none;
+  border-radius: 5px;
+}
+
+.item-container button:hover{
+  background-color: #D5A021;
+  transition: 1s;
+}
+
+
+/*! ESTILOS ITEM DETAIL */
+
+.detail-container{
+  width: 800px;
+  margin: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-container img{
+  width: 400px;
+}
+
+.detail-container h2{
+  font-family: 'Aboreto', cursive;
+  color:#2A4747;
+  font-size: 30px;
+  border-bottom: solid 0.5px #2A4747;
+  margin-bottom: 20px;
+}
+
+.detail-container p{
+  font-family: 'Aboreto', cursive;
+  font-size: 15px;
+  color:#2A4747;
+  margin-bottom: 5px;
+}
+
+.btn-add{
+  font-family: 'Aboreto', cursive;
+  color:white;
+  font-size: 15px;
+  padding: 10px;
+  background-color:#2A4747;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/*! ESTILOS ITEM COUNT */
+
+.item-count{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.item-count p{
+  width: 60px;
+}
+
+.btn-item-count{
+  font-family: 'Aboreto', cursive;
+  color:white;
+  font-size: 20px;
+  width: 25px;
+  height: 25px;
+  background-color:#2A4747;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-reset-count{
+  font-family: 'Aboreto', cursive;
+  color:white;
+  font-size: 15px;
+  padding: 0 5px 0 5px;
+  height: 25px;
+  background-color:#2A4747;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
 }
