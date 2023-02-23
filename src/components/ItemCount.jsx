@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
     const [count, setCount] = useState(0);
 
     const addItem = () => {
-        setCount(count + 1);
+        if (count < stock){
+            setCount(count + 1
+                )}
+            ;
     }
 
     const substractItem = () => {
