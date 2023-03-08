@@ -16,7 +16,7 @@ const ItemDetail = ({ products }) => {
             <p>{product.description}</p>
             <p>Stock: {product.stock}</p>
             <p>${product.price}</p>
-            <ItemCount stock={product.stock}/>
+            <ItemCount stock={product.stock} id={product.id} name={product.name} price={product.price}/>
             <button className='btn-add'>Comprar</button>
           </div>
         </div>
