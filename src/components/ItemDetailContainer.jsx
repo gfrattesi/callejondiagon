@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from "./ItemDetail";
+import { collection, getDocs, getFirestore} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch("/src/data.json");
-        const data = await response.json();
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getData();
-  }, [])
-
+  useEffect(()=>{
+    const dataBase = getFirestore();
+    const itemCollection = collection (dataBase, "productos");
+    getDocs(itemCollection).then((querySnapshot)=>{
+        const documents = querySnapshot.docs.map((doc)=>({
+          ...doc.data(), id: doc.id
+        }));
+        setProducts(documents);
+      });
+  }, []);
 
   return (
     <>

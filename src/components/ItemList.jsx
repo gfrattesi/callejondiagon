@@ -4,7 +4,8 @@ import Item from './Item'
 const ItemList = ({ products }) => {
     console.log(products)
     return (
-        <div className='item-list'>
+        <div className='item-list-container'>        
+            <div className='item-list'>
             {products.map((product) => {
                 return (
                     <Item
@@ -18,6 +19,7 @@ const ItemList = ({ products }) => {
                 )
             })}
         </div>
+    </div>
     )
 }
 

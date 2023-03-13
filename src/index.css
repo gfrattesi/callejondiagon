@@ -92,10 +92,18 @@ nav ul li:hover{
   color: white
 }
 
+.item-list-container{
+display: flex;
+width: 100%;
+align-items: center;
+}
+
 .item-list{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  margin: 30px;
 }
 
 .item-container{
@@ -160,6 +168,7 @@ nav ul li:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .detail-container img{
@@ -181,14 +190,10 @@ nav ul li:hover{
   margin-bottom: 5px;
 }
 
-.btn-add{
-  font-family: 'Aboreto', cursive;
-  color:white;
-  font-size: 15px;
-  padding: 10px;
-  background-color:#2A4747;
-  border: none;
-  border-radius: 5px;
+.data-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -216,14 +221,71 @@ nav ul li:hover{
   border-radius: 5px;
 }
 
-.btn-reset-count{
+.btn-add{
   font-family: 'Aboreto', cursive;
   color:white;
   font-size: 15px;
-  padding: 0 5px 0 5px;
-  height: 25px;
+  padding: 10px;
   background-color:#2A4747;
   border: none;
   border-radius: 5px;
-  margin-left: 5px;
+}
+
+/*! ESTILOS CART */
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.cart h3{
+  font-family: 'Aboreto', cursive;
+  color:#2A4747;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-title{
+  border-bottom: solid 1px #2A4747;
+}
+
+.cart-item{
+  padding: 10px;
+  color:#2A4747;
+}
+
+.cart-item p{
+  font-family: 'Aboreto', cursive;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cart-item span{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.btn-delete{
+  font-family: 'Aboreto', cursive;
+  color:white;
+  font-size: 10px;
+  padding: 10px;
+  background-color:#2A4747;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+  right: 150px;
+}
+
+.btn-delete:hover{
+  background-color:#D5A021;
+  transition: 1s;
+}
+
+.cart-item-img{
+  width: 70px;
 }

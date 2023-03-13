@@ -1,24 +1,59 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
+  const [precioTotal, setPrecioTotal] = useState(0);
 
+  useEffect(() => {
+    let total = 0;
+    cart.forEach(item => {
+      total += (item.price*item.quantity);
+    });
+    setPrecioTotal(total);
+  }, [cart]);
+
+  const deleteItem = (id) => {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "No podrás revertir este cambio",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const newCart = cart.filter(item => item.id !== id);
+        setCart(newCart);
+        console.log("Producto Eliminado");
+        Swal.fire(
+          '¡Eliminado!',
+          'El producto fue eliminado',
+          'success'
+        )
+      }
+    })
+  };
 
   return (
     <>
-      <div>
+      <div className='cart'>
+        <h3 className='cart-title'>PRODUCTOS</h3>
         {cart.map((item) => {
           return (
-            <div key={item.id}>
+            <div className="cart-item" key={item.id}>
+              <img className="cart-item-img" src={item.image} alt=""></img>
               <p>{item.name}</p>
-              <span>x{item.quantity}</span>
-              <span>Precio:{item.price}</span>
-              <span>Subtotal: {item.price*item.quantity}</span>
+              <span>Cantidad: {item.quantity}</span>
+              <span>Precio: ${item.price}</span>
+              <span>Subtotal: ${item.price * item.quantity}</span>
+              <button className="btn-delete" onClick={() => deleteItem(item.id)}>X</button>
             </div>
           )
         })}
+        <h3>Total: ${precioTotal}</h3>
       </div>
     </>
   )
