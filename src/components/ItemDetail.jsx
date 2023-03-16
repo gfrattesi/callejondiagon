@@ -10,12 +10,12 @@ const ItemDetail = ({ products }) => {
 
   useEffect(()=>{
     const dataBase = getFirestore();
-    const currItem = doc(dataBase, "productos", `${id}`);
-    getDoc(currItem).then((snapshot)=>{
+    const thisProduct = doc(dataBase, "productos", `${id}`);
+    getDoc(thisProduct).then((snapshot)=>{
       if (snapshot.exists()) {
         setProduct(snapshot.data());
       } else {
-        console.log("El documento no existe");
+        console.log("El producto no existe");
       }
     });
   }, []);
@@ -31,7 +31,7 @@ const ItemDetail = ({ products }) => {
             <h2>{product.name}</h2>
             <p>{product.description}</p>
             <p>Stock: {product.stock}</p>
-            <p>${product.price}</p>
+            <div className='price'>Precio: ${product.price}</div>
             <ItemCount stock={product.stock} id={product.id} name={product.name} price={product.price} image={product.pictureURL}/>
           </div>
         </div>

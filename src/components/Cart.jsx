@@ -1,17 +1,18 @@
 import React from 'react'
 import { useState, useEffect, useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
+import SendOrder from './SendOrder';
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
-  const [precioTotal, setPrecioTotal] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     let total = 0;
     cart.forEach(item => {
       total += (item.price*item.quantity);
     });
-    setPrecioTotal(total);
+    setTotalPrice(total);
   }, [cart]);
 
   const deleteItem = (id) => {
@@ -41,6 +42,7 @@ const Cart = () => {
     <>
       <div className='cart'>
         <h3 className='cart-title'>PRODUCTOS</h3>
+        {(cart.length == 0) && <h3>No hay productos en el carrito</h3>}
         {cart.map((item) => {
           return (
             <div className="cart-item" key={item.id}>
@@ -53,7 +55,9 @@ const Cart = () => {
             </div>
           )
         })}
-        <h3>Total: ${precioTotal}</h3>
+        {(cart.length > 0) && <h3>Total: ${totalPrice}</h3>}
+        {(cart.length > 0) && <SendOrder/>}
+
       </div>
     </>
   )

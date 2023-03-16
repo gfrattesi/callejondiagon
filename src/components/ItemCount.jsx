@@ -21,24 +21,22 @@ const ItemCount = ({ stock, id, name, price, image }) => {
         ;
     }
 
-
     const addToCart = () => {
-        setCart((currentItems) => {
-            const isItemFound = currentItems.find((item) => item.id === id);
-            if (isItemFound) {
-                return currentItems.map((item) => {
-                    if (item.id === id) {
-                        return { ...item, quantity: item.quantity + count };
+        setCart((products) => {
+            const existingProduct = products.find((product) => product.id === id);
+            if (existingProduct) {
+                return products.map((product) => {
+                    if (product.id === id) {
+                        return { ...product, quantity: product.quantity + count };
                     } else {
-                        return item;
+                        return product;
                     }
                 });
             } else {
-                return [...currentItems, { id, quantity: count, name, price, image }];
+                return [...products, { id, quantity: count, name, price, image }];
             }
         });
     }
-
 
     return (
         <div>

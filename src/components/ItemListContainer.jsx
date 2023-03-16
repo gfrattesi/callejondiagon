@@ -9,12 +9,13 @@ const ItemListContainer = () => {
 
   useEffect(()=>{
     const dataBase = getFirestore();
-    const itemCollection = collection (dataBase, "productos");
-    getDocs(itemCollection).then((querySnapshot)=>{
-        const documents = querySnapshot.docs.map((doc)=>({
-          ...doc.data(), id: doc.id
+    const data = collection(dataBase, "productos");
+    getDocs(data).then((data)=>{
+        const newProducts = data.docs.map((doc)=>({
+            id: doc.id,
+            ...doc.data(),
         }));
-        setProducts(documents);
+        setProducts(newProducts);
       });
   }, []);
 

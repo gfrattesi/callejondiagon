@@ -2,7 +2,7 @@ import React from 'react'
 import Item from './Item'
 
 const ItemList = ({ products }) => {
-    console.log(products)
+    
     return (
         <div className='item-list-container'>        
             <div className='item-list'>
@@ -13,6 +13,7 @@ const ItemList = ({ products }) => {
                         id={product.id}
                         name={product.name}
                         stock={product.stock}
+                        price={product.price}
                         image={product.pictureURL}
                         category={product.category}
                     />

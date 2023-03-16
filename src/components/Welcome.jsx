@@ -4,7 +4,9 @@ const Welcome = ({ greeting }) => {
   return (
     <>
       <div>
-        <p className="bienvenidos">{greeting}</p>
+        <div className="bienvenidos">
+          <p>{greeting}</p>
+        </div>
       </div>
     </>
   )
