@@ -3,9 +3,12 @@
 ## Proyecto Final para curso de React en Coderhouse.
 #### Aplicación SPA orientada a E-Commerce de productos del mundo mágico de Harry Potter.
 
-#### Gestión de flujo de datos con Firebase.
+* Gestión de flujo de datos con Firebase.
+* Filtrado de productos por categoría e ID a través de useParams.
+* Envío de confirmación de compra a la base de datos con generación de N° de orden.
+* Renderizado condicional aplicado en componente Cart.
 
 ---
 
 **Gif con navegabilidad:**
-![gif](https://i.postimg.cc/L8L9zQ36/Callejon-Diagon.gif)
+![Callejon-Diagon.gif](https://postimg.cc/PPfFkvnZ)

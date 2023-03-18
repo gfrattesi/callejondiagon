@@ -5,7 +5,7 @@ const Welcome = ({ greeting }) => {
     <>
       <div>
         <div className="bienvenidos">
-          <p>{greeting}</p>
+          <p className='animate__animated animate__zoomIn'>{greeting}</p>
         </div>
       </div>
     </>
