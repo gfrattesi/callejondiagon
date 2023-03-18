@@ -11,4 +11,4 @@
 ---
 
 **Gif con navegabilidad:**
-![Callejon-Diagon.gif](https://postimg.cc/PPfFkvnZ)
+[![Callejon-Diagon.gif](https://i.postimg.cc/jdyVPy88/Callejon-Diagon.gif)](https://postimg.cc/PPfFkvnZ)
