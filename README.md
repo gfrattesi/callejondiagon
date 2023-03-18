@@ -10,5 +10,5 @@
 
 ---
 
-**Gif con navegabilidad:**
+**Gif con navegabilidad:**<br>
 ![Callejon-Diagon.gif](/src/assets/Callejon%20Diagon.gif)
